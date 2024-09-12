@@ -3,7 +3,7 @@ env: production
 services:
   - name: web
     type: web
-    command: gunicorn core.wsgi:application
+    command: gunicorn core:application
     env:
       - name: RENDER_ENVIRONMENT
         value: production
