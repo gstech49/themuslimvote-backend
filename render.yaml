@@ -3,7 +3,7 @@ env: production
 services:
   - name: web
     type: web
-    command: gunicorn core.wsgi:application --workers 3 --bind 0.0.0.0:8000
+    command: gunicorn core.wsgi:application --workers 3 --bind 0.0.0.0:process.env.port || 8000
     env:
       - name: RENDER_ENVIRONMENT
         value: production
